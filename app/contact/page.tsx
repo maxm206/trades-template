@@ -21,11 +21,11 @@ export default function ContactPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover -z-20"
+          className="object-cover object-[75%_center] -z-20"
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-br from-dark/92 via-dark/86 to-primary-dark/70"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-dark/95 via-dark/80 to-dark/40"
         />
         <Container>
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">Contact</div>
