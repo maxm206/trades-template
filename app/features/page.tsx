@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { Sparkles, Calendar, MessageCircle, Star, MapPin, Camera, Globe } from "lucide-react"
 import { siteConfig } from "@/config/site"
 import { Container } from "@/components/ui/Container"
 import { Button } from "@/components/ui/Button"
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder"
 import { BookingWidget } from "@/components/forms/BookingWidget"
 import { GBPCard } from "@/components/sections/GBPCard"
 import { ReviewCard } from "@/components/cards/ReviewCard"
@@ -186,11 +186,27 @@ export default function FeaturesPage() {
         <div className="grid grid-cols-2 gap-3">
           <div>
             <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500 mb-2">Stock</div>
-            <PhotoPlaceholder description="Generic stock" aspect="square" tone="neutral" />
+            <div className="relative aspect-square rounded-lg overflow-hidden border border-slate-300 shadow-card">
+              <Image
+                src="/photos/homeowner.jpg"
+                alt="Generic stock photo"
+                fill
+                sizes="(min-width: 1024px) 25vw, 50vw"
+                className="object-cover grayscale opacity-80"
+              />
+            </div>
           </div>
           <div>
             <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dark mb-2">Real</div>
-            <PhotoPlaceholder description="Your tech, your truck" aspect="square" tone="primary" />
+            <div className="relative aspect-square rounded-lg overflow-hidden border border-slate-300 shadow-card">
+              <Image
+                src="/photos/tech.jpg"
+                alt="Your tech, your truck"
+                fill
+                sizes="(min-width: 1024px) 25vw, 50vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </FeatureSection>

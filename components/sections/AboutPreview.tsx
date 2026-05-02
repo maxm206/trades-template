@@ -1,20 +1,23 @@
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { siteConfig } from "@/config/site"
 import { Container } from "@/components/ui/Container"
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder"
 
 export function AboutPreview() {
   return (
     <section className="py-16 md:py-24 bg-light">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 md:gap-14 items-center">
-          <PhotoPlaceholder
-            description={`${siteConfig.ownerName} portrait`}
-            aspect="square"
-            className="w-full max-w-[320px] md:w-72"
-            tone="primary"
-          />
+          <div className="w-full max-w-[320px] md:w-72 aspect-square relative rounded-lg overflow-hidden border border-slate-300 shadow-card">
+            <Image
+              src="/photos/tech.jpg"
+              alt={`${siteConfig.ownerName}, owner of ${siteConfig.businessName}`}
+              fill
+              sizes="(min-width: 768px) 288px, 320px"
+              className="object-cover"
+            />
+          </div>
           <div>
             <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent-dark">
               About the owner

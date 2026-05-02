@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { MapPin, Clock } from "lucide-react"
 import { siteConfig } from "@/config/site"
 import { Container } from "@/components/ui/Container"
@@ -13,7 +14,19 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-hero-dark text-white pt-14 md:pt-20 pb-12">
+      <section className="relative isolate overflow-hidden text-white pt-14 md:pt-20 pb-12">
+        <Image
+          src="/photos/thermostat.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover -z-20"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-br from-dark/92 via-dark/86 to-primary-dark/70"
+        />
         <Container>
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">Contact</div>
           <h1 className="mt-3 font-display font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[0.95]">

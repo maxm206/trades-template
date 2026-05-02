@@ -1,8 +1,14 @@
+import Image from "next/image"
 import { Star, MapPin, Clock, Phone, Globe } from "lucide-react"
 import { siteConfig } from "@/config/site"
 import { Container } from "@/components/ui/Container"
 import { SectionTitle } from "@/components/ui/SectionTitle"
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder"
+
+const GBP_PHOTOS = [
+  { src: "/photos/truck.jpg", alt: "Service truck" },
+  { src: "/photos/tech.jpg", alt: "Lead technician" },
+  { src: "/photos/ac-unit.jpg", alt: "Outdoor AC unit installation" },
+]
 
 export function GBPCard() {
   return (
@@ -16,9 +22,17 @@ export function GBPCard() {
         <div className="mt-10 max-w-[640px] mx-auto rounded-xl border border-slate-200 bg-white shadow-card-hover overflow-hidden">
           {/* Hero photo strip */}
           <div className="grid grid-cols-3 gap-1 bg-slate-100">
-            <PhotoPlaceholder description="Truck" aspect="landscape" tone="primary" className="rounded-none border-0" />
-            <PhotoPlaceholder description="Tech" aspect="landscape" tone="accent" className="rounded-none border-0" />
-            <PhotoPlaceholder description="Job site" aspect="landscape" tone="primary" className="rounded-none border-0" />
+            {GBP_PHOTOS.map((p) => (
+              <div key={p.src} className="relative aspect-[16/10]">
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  fill
+                  sizes="(min-width: 640px) 213px, 33vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
           <div className="p-5 md:p-6">
             <div className="flex items-start justify-between gap-3">

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Phone } from "lucide-react"
 import { siteConfig } from "@/config/site"
@@ -9,16 +10,31 @@ import { TrustPill } from "@/components/ui/TrustPill"
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-hero-dark text-white pt-16 md:pt-20 pb-16 md:pb-24">
-      {/* Atmosphere orbs */}
+    <section className="relative isolate overflow-hidden text-white pt-16 md:pt-20 pb-16 md:pb-24">
+      {/* Background photo */}
+      <Image
+        src="/photos/hero.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover -z-20"
+        sizes="100vw"
+      />
+      {/* Dark gradient overlay so the headline reads */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 -right-40 h-[640px] w-[640px] rounded-full bg-accent/10 blur-3xl"
+        className="absolute inset-0 -z-10 bg-gradient-to-br from-dark/90 via-dark/85 to-primary-dark/70"
+      />
+      {/* Atmosphere orbs for additional depth */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 -right-40 h-[640px] w-[640px] rounded-full bg-accent/15 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute top-32 -left-40 h-[480px] w-[480px] rounded-full bg-primary/15 blur-3xl"
+        className="pointer-events-none absolute top-32 -left-40 h-[480px] w-[480px] rounded-full bg-primary/20 blur-3xl"
       />
+
       <Container className="relative">
         <div className="max-w-[820px]">
           <motion.div
@@ -41,7 +57,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 max-w-[600px] text-lg md:text-xl leading-relaxed text-white/80"
+            className="mt-6 max-w-[600px] text-lg md:text-xl leading-relaxed text-white/85"
           >
             Licensed, insured, and on your side since {siteConfig.founded}. Serving {siteConfig.serviceArea}.
           </motion.p>

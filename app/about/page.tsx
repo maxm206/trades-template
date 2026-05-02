@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { siteConfig } from "@/config/site"
 import { Container } from "@/components/ui/Container"
 import { Button } from "@/components/ui/Button"
 import { Icon } from "@/components/ui/Icon"
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder"
 import { FinalCTA } from "@/components/sections/FinalCTA"
 
 export const metadata: Metadata = {
@@ -34,6 +34,13 @@ const VALUES = [
   },
 ]
 
+const TEAM_GALLERY = [
+  { src: "/photos/tech.jpg", alt: "Lead technician" },
+  { src: "/photos/truck.jpg", alt: "Service truck #3" },
+  { src: "/photos/ac-unit.jpg", alt: "Outdoor unit installation" },
+  { src: "/photos/team.jpg", alt: "The crew" },
+]
+
 export default function AboutPage() {
   return (
     <>
@@ -53,12 +60,15 @@ export default function AboutPage() {
       <section className="py-14 md:py-20 bg-light">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 lg:gap-14 items-start">
-            <PhotoPlaceholder
-              description={`${siteConfig.ownerName} portrait`}
-              aspect="portrait"
-              tone="primary"
-              className="w-full max-w-[360px] lg:w-80"
-            />
+            <div className="w-full max-w-[360px] lg:w-80 aspect-[4/5] relative rounded-lg overflow-hidden border border-slate-300 shadow-card">
+              <Image
+                src="/photos/tech.jpg"
+                alt={`${siteConfig.ownerName}, owner of ${siteConfig.businessName}`}
+                fill
+                sizes="(min-width: 1024px) 320px, 360px"
+                className="object-cover"
+              />
+            </div>
             <div className="text-base md:text-lg text-slate-700 leading-relaxed space-y-5 max-w-[680px]">
               <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent-dark">
                 Owner story
@@ -98,7 +108,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Team gallery — placeholders */}
+      {/* Team gallery */}
       <section className="py-14 md:py-20 bg-light">
         <Container>
           <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent-dark">The crew</div>
@@ -106,10 +116,20 @@ export default function AboutPage() {
             Real photos from a half-day on-site shoot.
           </h2>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-            <PhotoPlaceholder description="Lead tech" aspect="portrait" tone="primary" />
-            <PhotoPlaceholder description="Truck #3" aspect="portrait" tone="accent" />
-            <PhotoPlaceholder description="Job site install" aspect="portrait" tone="primary" />
-            <PhotoPlaceholder description="Team huddle" aspect="portrait" tone="accent" />
+            {TEAM_GALLERY.map((p) => (
+              <div
+                key={p.src}
+                className="relative aspect-[4/5] rounded-lg overflow-hidden border border-slate-300 shadow-card"
+              >
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -126,11 +146,15 @@ export default function AboutPage() {
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500 mb-2">
                 Stock photo
               </div>
-              <PhotoPlaceholder
-                description="Generic smiling tech, watermark visible"
-                aspect="landscape"
-                tone="neutral"
-              />
+              <div className="relative aspect-[16/10] rounded-lg overflow-hidden border border-slate-300 shadow-card">
+                <Image
+                  src="/photos/homeowner.jpg"
+                  alt="Generic homeowner stock photo"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover grayscale opacity-80"
+                />
+              </div>
               <p className="mt-3 text-sm text-slate-600">
                 Looks like every other HVAC site. Buyers can tell.
               </p>
@@ -139,11 +163,15 @@ export default function AboutPage() {
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dark mb-2">
                 Real photo
               </div>
-              <PhotoPlaceholder
-                description="Tech standing next to actual truck on a real driveway"
-                aspect="landscape"
-                tone="primary"
-              />
+              <div className="relative aspect-[16/10] rounded-lg overflow-hidden border border-slate-300 shadow-card">
+                <Image
+                  src="/photos/homeowner.jpg"
+                  alt="Real customer in their living room"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
               <p className="mt-3 text-sm text-slate-600">
                 Specific. Verifiable. Local. Converts.
               </p>

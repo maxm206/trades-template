@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { Phone, ArrowRight, CheckCircle2 } from "lucide-react"
@@ -11,6 +12,16 @@ import { Icon } from "@/components/ui/Icon"
 import { FAQAccordion } from "@/components/ui/FAQAccordion"
 import { FAQSchema } from "@/components/seo/FAQSchema"
 import { FinalCTA } from "@/components/sections/FinalCTA"
+
+// Map each service slug to its hero background photo.
+const SERVICE_HERO_PHOTO: Record<string, string> = {
+  "ac-repair": "/photos/ac-unit.jpg",
+  "ac-installation": "/photos/ac-unit.jpg",
+  "heating-repair": "/photos/heating.jpg",
+  "heating-installation": "/photos/heating.jpg",
+  "mini-splits": "/photos/minisplit.jpg",
+  "maintenance": "/photos/tools.jpg",
+}
 
 type Props = { params: { slug: string } }
 
@@ -39,7 +50,19 @@ export default function ServicePage({ params }: Props) {
       <FAQSchema items={faqs} />
 
       {/* Hero */}
-      <section className="bg-hero-dark text-white pt-14 md:pt-20 pb-16">
+      <section className="relative isolate overflow-hidden text-white pt-14 md:pt-20 pb-16">
+        <Image
+          src={SERVICE_HERO_PHOTO[c.slug] || "/photos/hero.jpg"}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover -z-20"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-br from-dark/92 via-dark/85 to-primary-dark/70"
+        />
         <Container>
           <Link href="/services" className="inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.18em] text-white/55 hover:text-accent transition-colors mb-5">
             ← All services
