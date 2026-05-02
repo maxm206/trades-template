@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trades Advisory Template
 
-## Getting Started
+Reusable Next.js 14 template for HVAC, plumbing, and home services client websites. Currently configured as the **Summit Heating & Air** demo at [demo.tradesadvisory.com](https://demo.tradesadvisory.com).
 
-First, run the development server:
+## Stack
+
+- Next.js 14 App Router, TypeScript, Tailwind CSS
+- `next/font/google` (Bricolage Grotesque + Inter)
+- `lucide-react`, `framer-motion`
+
+## Quick start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Cloning for a new client
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Duplicate the repo (or fork + rename).
+2. Edit `config/site.ts` — business name, phone, colors, services, service areas, hours, integrations.
+3. Edit `data/services/*.ts` — per-service detail content + bullets + what-to-expect.
+4. Edit `data/faqs.ts` — service-specific FAQs.
+5. Edit `data/serviceAreaContent.ts` — per-city paragraphs.
+6. Edit `data/reviews.ts` — real reviews from Google/Yelp.
+7. Drop client photos in `public/` and replace `<PhotoPlaceholder>` calls with `<Image>` where applicable.
+8. Deploy to Vercel + connect the client's domain.
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  layout.tsx            root layout, fonts, color CSS-var injection, global widgets
+  page.tsx              homepage
+  services/             service index + dynamic [slug]
+  about/
+  contact/              info + ContactForm + BookingWidget
+  features/             add-on showcase
+  areas/[city]/         dynamic city pages
+  sitemap.ts robots.ts opengraph-image.tsx
+components/
+  layout/               Navbar, Footer, EmergencyBanner, MobileCallBar, RosieChatWidget
+  sections/             Hero, ServicesGrid, WhyChooseUs, ReviewsSection, GBPCard, ...
+  cards/                ServiceCard, ReviewCard
+  forms/                ContactForm, BookingWidget
+  ui/                   Button, Container, Icon, PhotoPlaceholder, SectionTitle, ...
+  seo/                  LocalBusinessSchema, FAQSchema
+config/site.ts          single source of truth
+data/                   reviews, FAQs, service detail copy, city content
+lib/                    cn (class joiner), colors (hex→rgb triplet)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Color system
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Colors live in `config/site.ts` as hex strings. They get injected at build time as RGB triplets into CSS variables in `app/layout.tsx`. Tailwind tokens (`primary`, `accent`, `dark`, etc.) reference those variables, so:
 
-## Deploy on Vercel
+```jsx
+<div className="bg-primary text-light hover:bg-accent/80">
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+works and updates automatically when you change the config.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Add-on integrations
+
+The demo includes faithful UI placeholders for:
+
+- **Online Booking** (ZenBooker) — `BookingWidget` with calendar + time slots
+- **AI Receptionist** (Rosie AI) — floating chat widget, demo conversation
+- **Review Generation** (NiceJob) — review feed + leave-a-review CTA
+- **GBP Optimization** — `GBPCard` simulated profile
+- **Service Area SEO Pages** — full city × service routes
+- **Real Photo Shoot Day** — placeholder photos throughout
+
+None are wired to real APIs. Replace the placeholders with real embeds when integrations go live.
+
+## Deployment
+
+Push to GitHub, import to Vercel, connect domain. Static prerendering means every page is HTML at the edge — no server cost beyond the function invocations for OG image generation.
