@@ -35,10 +35,10 @@ const VALUES = [
 ]
 
 const TEAM_GALLERY = [
-  { src: "/photos/tech.jpg", alt: "Lead technician" },
-  { src: "/photos/truck.jpg", alt: "Service truck #3" },
-  { src: "/photos/ac-unit.jpg", alt: "Outdoor unit installation" },
-  { src: "/photos/team.jpg", alt: "The crew" },
+  { src: "/photos/hvac.tech.jpg", alt: "Lead technician on the job" },
+  { src: "/photos/condenser.tech.jpg", alt: "Servicing a condenser" },
+  { src: "/photos/hvac.condenser.roof.jpg", alt: "Rooftop install" },
+  { src: "/photos/condensers.jpg", alt: "Outdoor condenser units" },
 ]
 
 export default function AboutPage() {
@@ -62,7 +62,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 lg:gap-14 items-start">
             <div className="w-full max-w-[360px] lg:w-80 aspect-[4/5] relative rounded-lg overflow-hidden border border-slate-300 shadow-card">
               <Image
-                src="/photos/tech.jpg"
+                src="/photos/owner.jpg"
                 alt={`${siteConfig.ownerName}, owner of ${siteConfig.businessName}`}
                 fill
                 sizes="(min-width: 1024px) 320px, 360px"
@@ -148,8 +148,8 @@ export default function AboutPage() {
               </div>
               <div className="relative aspect-[16/10] rounded-lg overflow-hidden border border-slate-300 shadow-card">
                 <Image
-                  src="/photos/homeowner.jpg"
-                  alt="Generic homeowner stock photo"
+                  src="/photos/hvac.tech.jpg"
+                  alt="Generic HVAC stock photo"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover grayscale opacity-80"
@@ -165,8 +165,8 @@ export default function AboutPage() {
               </div>
               <div className="relative aspect-[16/10] rounded-lg overflow-hidden border border-slate-300 shadow-card">
                 <Image
-                  src="/photos/homeowner.jpg"
-                  alt="Real customer in their living room"
+                  src="/photos/hvac.tech.jpg"
+                  alt={`Real ${siteConfig.businessName} technician on the job`}
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover"

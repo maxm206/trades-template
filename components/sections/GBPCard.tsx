@@ -5,9 +5,9 @@ import { Container } from "@/components/ui/Container"
 import { SectionTitle } from "@/components/ui/SectionTitle"
 
 const GBP_PHOTOS = [
-  { src: "/photos/truck.jpg", alt: "Service truck" },
-  { src: "/photos/tech.jpg", alt: "Lead technician" },
-  { src: "/photos/ac-unit.jpg", alt: "Outdoor AC unit installation" },
+  { src: "/photos/condenser.tech.jpg", alt: "Tech servicing a condenser" },
+  { src: "/photos/hvac.tech.jpg", alt: "Lead technician on the job" },
+  { src: "/photos/condensers.jpg", alt: "Outdoor condenser units" },
 ]
 
 export function GBPCard() {

@@ -10,20 +10,23 @@ import { TrustPill } from "@/components/ui/TrustPill"
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden text-white pt-16 md:pt-20 pb-16 md:pb-24">
-      {/* Background photo */}
+    // Full-bleed: zero padding, zero margin on the wrapper. The Image fills
+    // the section edge-to-edge. Vertical padding lives on the Container so the
+    // content has breathing room without letterboxing the photo.
+    <section className="relative isolate overflow-hidden text-white">
+      {/* Background photo — fills entire section */}
       <Image
-        src="/photos/hero.jpg"
+        src="/photos/hero.team.jpg"
         alt=""
         fill
         priority
         className="object-cover -z-20"
         sizes="100vw"
       />
-      {/* Dark gradient overlay so the headline reads */}
+      {/* Dark gradient overlay covers the full image */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-br from-dark/90 via-dark/85 to-primary-dark/70"
+        className="absolute inset-0 -z-10 bg-gradient-to-br from-dark/95 via-dark/90 to-dark/85"
       />
       {/* Atmosphere orbs for additional depth */}
       <div
@@ -35,7 +38,7 @@ export function Hero() {
         className="pointer-events-none absolute top-32 -left-40 h-[480px] w-[480px] rounded-full bg-primary/20 blur-3xl"
       />
 
-      <Container className="relative">
+      <Container className="relative pt-16 md:pt-20 pb-16 md:pb-24">
         <div className="max-w-[820px]">
           <motion.div
             initial={{ opacity: 0, y: 12 }}

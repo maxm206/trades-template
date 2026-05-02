@@ -15,12 +15,12 @@ import { FinalCTA } from "@/components/sections/FinalCTA"
 
 // Map each service slug to its hero background photo.
 const SERVICE_HERO_PHOTO: Record<string, string> = {
-  "ac-repair": "/photos/ac-unit.jpg",
-  "ac-installation": "/photos/ac-unit.jpg",
-  "heating-repair": "/photos/heating.jpg",
-  "heating-installation": "/photos/heating.jpg",
-  "mini-splits": "/photos/minisplit.jpg",
-  "maintenance": "/photos/tools.jpg",
+  "ac-repair": "/photos/fix.condenser.jpg",
+  "ac-installation": "/photos/condensers.jpg",
+  "heating-repair": "/photos/hvac.tech.jpg",
+  "heating-installation": "/photos/hvac.tech.jpg",
+  "mini-splits": "/photos/minisplit.room.jpg",
+  "maintenance": "/photos/condenser.tech.jpg",
 }
 
 type Props = { params: { slug: string } }
@@ -52,7 +52,7 @@ export default function ServicePage({ params }: Props) {
       {/* Hero */}
       <section className="relative isolate overflow-hidden text-white pt-14 md:pt-20 pb-16">
         <Image
-          src={SERVICE_HERO_PHOTO[c.slug] || "/photos/hero.jpg"}
+          src={SERVICE_HERO_PHOTO[c.slug] || "/photos/hero.team.jpg"}
           alt=""
           fill
           priority
