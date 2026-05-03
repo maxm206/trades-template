@@ -19,7 +19,7 @@ export function Footer() {
                 alt={siteConfig.businessName}
                 width={586}
                 height={184}
-                className="h-8 w-auto"
+                className="h-11 w-auto"
               />
             </Link>
             <div className="mt-3 text-white/70 text-sm">{siteConfig.tagline}</div>
