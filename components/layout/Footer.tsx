@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { siteConfig } from "@/config/site"
 import { Container } from "@/components/ui/Container"
 
@@ -12,10 +13,16 @@ export function Footer() {
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           <div className="col-span-2">
-            <div className="font-display font-extrabold text-2xl">
-              {siteConfig.businessName}
-            </div>
-            <div className="mt-2 text-white/70 text-sm">{siteConfig.tagline}</div>
+            <Link href="/" aria-label={`${siteConfig.businessName} home`} className="inline-block">
+              <Image
+                src="/logo.png"
+                alt={siteConfig.businessName}
+                width={586}
+                height={184}
+                className="h-8 w-auto"
+              />
+            </Link>
+            <div className="mt-3 text-white/70 text-sm">{siteConfig.tagline}</div>
             <a
               href={`tel:${siteConfig.phoneClean}`}
               className="mt-5 inline-block font-display font-extrabold text-2xl md:text-3xl tabular-nums hover:text-accent transition-colors"

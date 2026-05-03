@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/Button"
@@ -18,9 +19,17 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display font-extrabold text-lg md:text-xl tracking-[-0.01em] text-dark hover:text-primary transition-colors leading-tight"
+            className="flex items-center"
+            aria-label={`${siteConfig.businessName} home`}
           >
-            <span className="block">{siteConfig.businessName}</span>
+            <Image
+              src="/logo.png"
+              alt={siteConfig.businessName}
+              width={586}
+              height={184}
+              priority
+              className="h-9 md:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop nav */}
