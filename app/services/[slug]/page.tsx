@@ -23,6 +23,12 @@ const SERVICE_HERO_PHOTO: Record<string, string> = {
   "maintenance": "/photos/condenser.tech.jpg",
 }
 
+// Per-slug object-position override so the subject of the photo lands in
+// the visible hero area. Defaults to object-center.
+const SERVICE_HERO_POSITION: Record<string, string> = {
+  "mini-splits": "object-[70%_30%]",
+}
+
 type Props = { params: { slug: string } }
 
 export function generateStaticParams() {
@@ -57,11 +63,13 @@ export default function ServicePage({ params }: Props) {
           fill
           priority
           sizes="100vw"
-          className="object-cover -z-20"
+          className={`object-cover -z-20 ${SERVICE_HERO_POSITION[c.slug] || "object-center"}`}
         />
+        {/* Strong dark base so text stays readable on bright photos. */}
+        <div aria-hidden className="absolute inset-0 -z-10 bg-dark/55" />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-br from-dark/92 via-dark/85 to-primary-dark/70"
+          className="absolute inset-0 -z-10 bg-gradient-to-br from-dark/95 via-dark/85 to-dark/65"
         />
         <Container>
           <Link href="/services" className="inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.18em] text-white/55 hover:text-accent transition-colors mb-5">
