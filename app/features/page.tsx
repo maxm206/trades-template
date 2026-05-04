@@ -80,9 +80,9 @@ export default function FeaturesPage() {
 
       {/* Online Booking */}
       <FeatureSection
-        eyebrow="Online Booking"
+        eyebrow="Connects to ServiceTitan, Housecall Pro, Jobber, or ZenBooker"
         title="Customers schedule themselves. 24/7."
-        body="An embedded calendar pulls live tech availability and lets customers book the slot that works for them. SMS + email confirmation, calendar invite, and the appointment lands directly on the dispatch board."
+        body="An embedded calendar pulls live tech availability and lets customers book the slot that works for them. SMS + email confirmation, calendar invite, and the appointment lands directly on the dispatch board. We integrate with whatever system you already use. No switching platforms."
         price="Included in Lead Engine"
         iconName={<Calendar className="h-3 w-3" aria-hidden />}
       >

@@ -4,6 +4,30 @@
  * No business name, phone, color, or service should appear hardcoded in any
  * component — everything reads from here.
  */
+
+export type PlatformConfig = {
+  type: "servicetitan" | "housecallpro" | "jobber" | "zenbooker" | "none"
+  // ServiceTitan
+  schedulingProUrl?: string
+  tenantId?: string
+  // Housecall Pro
+  hcpBookingUrl?: string
+  hcpChatSnippet?: string
+  // Jobber
+  jobberBookingUrl?: string
+  // ZenBooker (leave url blank to use the demo UI)
+  zenbookerUrl?: string
+  // Generic fallback (any external booking URL — opens in new tab)
+  bookingUrl?: string
+  // Floating chat widget
+  chatWidget: "rosie" | "hcp" | "none"
+}
+
+const platform: PlatformConfig = {
+  type: "zenbooker",
+  chatWidget: "rosie",
+}
+
 export const siteConfig = {
   businessName: "Summit Heating & Air",
   tagline: "San Diego's most trusted HVAC team.",
@@ -91,6 +115,8 @@ export const siteConfig = {
     weekend: "By appointment",
     emergency: "24/7 emergency service available",
   },
+
+  platform,
 
   integrations: {
     calendly: {

@@ -19,7 +19,27 @@ const CONVERSATION = [
   },
 ]
 
+// ServiceTitan and Housecall Pro ship their own native chat — don't double up.
+const PLATFORMS_WITH_NATIVE_CHAT = ["servicetitan", "housecallpro"] as const
+
 export function RosieChatWidget() {
+  const { type, chatWidget, hcpChatSnippet } = siteConfig.platform
+
+  if ((PLATFORMS_WITH_NATIVE_CHAT as readonly string[]).includes(type)) return null
+  if (chatWidget === "none") return null
+  if (chatWidget === "hcp") return <HCPChatMount snippetId={hcpChatSnippet} />
+  return <RosieChat />
+}
+
+function HCPChatMount({ snippetId }: { snippetId?: string }) {
+  // Mount target for the Housecall Pro chat widget. Paste the JS snippet
+  // from the HCP dashboard into app/layout.tsx <head> (or via next/script)
+  // and HCP will render its own UI into the page. This div is here so a
+  // snippet that targets a specific element has somewhere to land.
+  return <div id="hcp-chat" data-snippet-id={snippetId ?? ""} aria-hidden />
+}
+
+function RosieChat() {
   const [open, setOpen] = useState(false)
   return (
     <>
