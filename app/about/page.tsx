@@ -183,7 +183,7 @@ export default function AboutPage() {
       {/* License + cert */}
       <section className="py-14 md:py-20 bg-light">
         <Container size="narrow">
-          <div className="rounded-xl bg-white border border-slate-200 shadow-card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div className="rounded-xl bg-accent/10 border border-slate-200 shadow-card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dark mb-2">
                 License &amp; insurance

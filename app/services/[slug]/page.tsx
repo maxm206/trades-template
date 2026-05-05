@@ -125,7 +125,7 @@ export default function ServicePage({ params }: Props) {
             </article>
 
             <aside className="lg:sticky lg:top-24 self-start">
-              <div className="rounded-xl bg-white border border-slate-200 shadow-card p-6">
+              <div className="rounded-xl bg-accent/10 border border-slate-200 shadow-card p-6">
                 <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dark mb-2">
                   Schedule {c.title}
                 </div>
@@ -172,7 +172,7 @@ export default function ServicePage({ params }: Props) {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className="group rounded-xl bg-white border border-slate-200 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all p-6"
+                className="group rounded-xl bg-accent/10 border border-slate-200 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all p-6"
               >
                 <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Icon name={s.icon} className="h-5 w-5" />
