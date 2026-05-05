@@ -62,7 +62,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 lg:gap-14 items-start">
             <div className="w-full max-w-[360px] lg:w-80 aspect-[4/5] relative rounded-lg overflow-hidden border border-slate-300 shadow-card">
               <Image
-                src="/photos/owner.jpg"
+                src="/photos/owner-demo.jpg"
                 alt={`${siteConfig.ownerName}, owner of ${siteConfig.businessName}`}
                 fill
                 sizes="(min-width: 1024px) 320px, 360px"

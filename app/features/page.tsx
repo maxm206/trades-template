@@ -200,7 +200,7 @@ export default function FeaturesPage() {
             <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dark mb-2">Real</div>
             <div className="relative aspect-square rounded-lg overflow-hidden border border-slate-300 shadow-card">
               <Image
-                src="/photos/owner.jpg"
+                src="/photos/owner-demo.jpg"
                 alt={`Real ${siteConfig.businessName} owner`}
                 fill
                 sizes="(min-width: 1024px) 25vw, 50vw"

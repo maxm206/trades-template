@@ -11,7 +11,7 @@ export function AboutPreview() {
         <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 md:gap-14 items-center">
           <div className="w-full max-w-[320px] md:w-72 aspect-square relative rounded-lg overflow-hidden border border-slate-300 shadow-card">
             <Image
-              src="/photos/owner.jpg"
+              src="/photos/owner-demo.jpg"
               alt={`${siteConfig.ownerName}, owner of ${siteConfig.businessName}`}
               fill
               sizes="(min-width: 768px) 288px, 320px"
