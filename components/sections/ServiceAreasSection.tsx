@@ -22,7 +22,7 @@ export function ServiceAreasSection() {
             <Link
               key={c}
               href={`/areas/${slugify(c)}`}
-              className="group inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-display font-bold text-sm text-dark hover:border-primary hover:text-primary hover:shadow-card-hover transition-all"
+              className="group inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-accent/10 px-4 py-2.5 font-display font-bold text-sm text-dark hover:border-primary hover:text-primary hover:shadow-card-hover transition-all"
             >
               <MapPin className="h-4 w-4 text-slate-400 group-hover:text-primary transition-colors" aria-hidden />
               {c}

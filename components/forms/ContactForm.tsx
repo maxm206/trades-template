@@ -53,7 +53,7 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-xl bg-white border border-slate-200 shadow-card p-7 text-center">
+      <div className="rounded-xl bg-accent/10 border border-slate-200 shadow-card p-7 text-center">
         <CheckCircle2 className="h-10 w-10 text-accent-dark mx-auto" aria-hidden />
         <h3 className="mt-3 font-display font-extrabold text-2xl text-dark">
           Got it{form.name ? `, ${form.name.split(" ")[0]}` : ""}.
@@ -69,7 +69,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-xl bg-white border border-slate-200 shadow-card p-6 md:p-7"
+      className="rounded-xl bg-accent/10 border border-slate-200 shadow-card p-6 md:p-7"
     >
       <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dark mb-1">
         Send a message

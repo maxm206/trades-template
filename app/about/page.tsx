@@ -96,7 +96,7 @@ export default function AboutPage() {
           </h2>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {VALUES.map((v) => (
-              <div key={v.title} className="rounded-xl bg-light border border-slate-200 p-6">
+              <div key={v.title} className="rounded-xl bg-accent/10 border border-slate-200 p-6">
                 <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Icon name={v.icon} className="h-5 w-5" />
                 </div>

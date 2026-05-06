@@ -16,7 +16,7 @@ export function ReviewsSection() {
             title="What customers say."
             subtitle="Real reviews from real customers. We do not pay for placement and we do not curate. Every review you see came directly from Google."
           />
-          <div className="inline-flex items-center gap-3 rounded-xl bg-white border border-slate-200 shadow-card px-5 py-3 self-start">
+          <div className="inline-flex items-center gap-3 rounded-xl bg-accent/10 border border-slate-200 shadow-card px-5 py-3 self-start">
             <div className="inline-flex items-center gap-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-5 w-5 fill-accent text-accent" aria-hidden />

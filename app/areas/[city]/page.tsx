@@ -81,7 +81,7 @@ export default function CityPage({ params }: Props) {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className="group rounded-xl bg-light border border-slate-200 hover:border-primary hover:shadow-card-hover hover:-translate-y-0.5 transition-all p-5"
+                className="group rounded-xl bg-accent/10 border border-slate-200 hover:border-primary hover:shadow-card-hover hover:-translate-y-0.5 transition-all p-5"
               >
                 <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Icon name={s.icon} className="h-5 w-5" />
@@ -113,7 +113,7 @@ export default function CityPage({ params }: Props) {
                 <Link
                   key={other.slug}
                   href={`/areas/${other.slug}`}
-                  className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-display font-bold text-sm text-dark hover:border-primary hover:text-primary transition-colors"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-accent/10 px-4 py-2.5 font-display font-bold text-sm text-dark hover:border-primary hover:text-primary transition-colors"
                 >
                   <MapPin className="h-4 w-4 text-slate-400" aria-hidden />
                   {other.city}
