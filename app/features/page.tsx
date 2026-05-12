@@ -155,7 +155,7 @@ export default function FeaturesPage() {
             <Link
               key={c}
               href={`/areas/${slugify(c)}`}
-              className="block rounded-lg bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30 transition-colors px-4 py-3"
+              className="block card-glass hover:-translate-y-0.5 px-4 py-3"
             >
               <div className="font-display font-bold text-white text-sm">AC Repair in {c}</div>
               <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/55 mt-0.5">/areas/{slugify(c)}</div>

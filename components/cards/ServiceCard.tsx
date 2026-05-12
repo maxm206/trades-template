@@ -9,7 +9,7 @@ export function ServiceCard({ service }: Props) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group relative flex flex-col rounded-xl bg-accent/10 border border-slate-200 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 overflow-hidden"
+      className="group card-light hover:-translate-y-0.5 relative flex flex-col overflow-hidden"
     >
       <div className="absolute top-0 left-0 h-1 w-full bg-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
       <div className="p-6 flex flex-col h-full">

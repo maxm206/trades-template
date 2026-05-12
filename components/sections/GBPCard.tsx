@@ -19,7 +19,7 @@ export function GBPCard() {
           title="Your listing, optimized."
           subtitle="Photos. Hours. Categories. Q&A. Review responses. The Google Business Profile work that puts you on the map for the right searches."
         />
-        <div className="mt-10 max-w-[640px] mx-auto rounded-xl border border-slate-200 bg-white shadow-card-hover overflow-hidden">
+        <div className="mt-10 max-w-[640px] mx-auto card-light overflow-hidden">
           {/* Hero photo strip */}
           <div className="grid grid-cols-3 gap-1 bg-slate-100">
             {GBP_PHOTOS.map((p) => (

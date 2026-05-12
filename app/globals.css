@@ -18,3 +18,24 @@ body {
 .text-balance {
   text-wrap: balance;
 }
+
+/* Card system — ported from the main Trades Advisory site so client
+   templates inherit the same premium card treatment. Two canonical styles:
+     .card-glass — dark surfaces (Hero, WhyChooseUs, FinalCTA)
+     .card-light — white / slate surfaces (Services, Reviews, GBP, etc.)
+   Interactive cards add `hover:-translate-y-0.5` at the call site. */
+@layer components {
+  .card-glass {
+    @apply rounded-xl bg-white/5 backdrop-blur-md border border-white/[0.08] shadow-card transition-all duration-200;
+  }
+  .card-glass:hover {
+    @apply bg-white/[0.07] border-white/[0.15];
+  }
+
+  .card-light {
+    @apply rounded-xl bg-white border border-slate-200 shadow-card transition-all duration-200;
+  }
+  .card-light:hover {
+    @apply shadow-card-hover;
+  }
+}

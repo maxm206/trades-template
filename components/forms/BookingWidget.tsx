@@ -84,7 +84,7 @@ function PlatformIframe({
 }) {
   if (!url) return <MissingPlatformConfig field={missingField} poweredBy={poweredBy} />
   return (
-    <div className="rounded-xl bg-accent/10 border border-slate-200 shadow-card overflow-hidden">
+    <div className="card-light overflow-hidden">
       <div className="px-5 md:px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
         <div className="flex items-center gap-2 font-display font-extrabold text-dark">
           <Calendar className="h-5 w-5 text-accent-dark" aria-hidden />
@@ -107,7 +107,7 @@ function PlatformIframe({
 
 function ExternalBookingButton({ url }: { url: string }) {
   return (
-    <div className="rounded-xl bg-accent/10 border border-slate-200 shadow-card p-6 md:p-8 text-center">
+    <div className="card-light p-6 md:p-8 text-center">
       <Calendar className="h-10 w-10 text-accent-dark mx-auto" aria-hidden />
       <h3 className="mt-3 font-display font-extrabold text-xl md:text-2xl text-dark">
         Schedule online
@@ -191,7 +191,7 @@ function ZenBookerDemoUI({ compact }: { compact: boolean }) {
 
   if (confirmed) {
     return (
-      <div className="rounded-xl bg-accent/10 border border-slate-200 shadow-card p-6 md:p-8 text-center">
+      <div className="card-light p-6 md:p-8 text-center">
         <CheckCircle2 className="h-10 w-10 text-accent-dark mx-auto" strokeWidth={2} aria-hidden />
         <h3 className="mt-3 font-display font-extrabold text-xl md:text-2xl text-dark">
           Demo booking confirmed
@@ -208,7 +208,7 @@ function ZenBookerDemoUI({ compact }: { compact: boolean }) {
   }
 
   return (
-    <div className="rounded-xl bg-accent/10 border border-slate-200 shadow-card overflow-hidden">
+    <div className="card-light overflow-hidden">
       <div className="px-5 md:px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
         <div className="flex items-center gap-2 font-display font-extrabold text-dark">
           <Calendar className="h-5 w-5 text-accent-dark" aria-hidden />

@@ -9,7 +9,7 @@ type Props = { items: FAQ[] }
 export function FAQAccordion({ items }: Props) {
   const [open, setOpen] = useState<number | null>(0)
   return (
-    <div className="divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white shadow-card">
+    <div className="divide-y divide-slate-200 card-light">
       {items.map((it, i) => {
         const isOpen = open === i
         return (

@@ -96,7 +96,7 @@ export default function AboutPage() {
           </h2>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {VALUES.map((v) => (
-              <div key={v.title} className="rounded-xl bg-accent/10 border border-slate-200 p-6">
+              <div key={v.title} className="card-light p-6">
                 <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Icon name={v.icon} className="h-5 w-5" />
                 </div>
@@ -183,7 +183,7 @@ export default function AboutPage() {
       {/* License + cert */}
       <section className="py-14 md:py-20 bg-light">
         <Container size="narrow">
-          <div className="rounded-xl bg-accent/10 border border-slate-200 shadow-card p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+          <div className="card-light p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
             <div>
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dark mb-2">
                 License &amp; insurance

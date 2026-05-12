@@ -36,7 +36,7 @@ export function WhyChooseUs() {
         />
         <div className="mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {VALUES.map((v) => (
-            <div key={v.title} className="rounded-xl bg-white/5 border border-white/10 p-6">
+            <div key={v.title} className="card-glass hover:-translate-y-0.5 p-6">
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent/15 text-accent">
                 <Icon name={v.icon} className="h-6 w-6" />
               </div>

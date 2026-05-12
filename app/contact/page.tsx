@@ -42,7 +42,7 @@ export default function ContactPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-12">
             {/* Left — info */}
-            <div className="rounded-xl bg-accent/10 border border-slate-200 shadow-card p-6 md:p-7 space-y-6">
+            <div className="card-light p-6 md:p-7 space-y-6">
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent-dark mb-2">Phone</div>
                 <a
