@@ -15,7 +15,7 @@ export function Navbar() {
   return (
     <>
       <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-card">
-        <div className="mx-auto max-w-[1280px] px-4 md:px-8 lg:px-12 h-16 md:h-18 flex items-center justify-between gap-3">
+        <div className="mx-auto max-w-[1280px] px-4 md:px-8 lg:px-12 h-16 flex items-center justify-between gap-3">
           {/* Logo */}
           <Link
             href="/"
@@ -28,7 +28,7 @@ export function Navbar() {
               width={1673}
               height={571}
               priority
-              className="h-11 md:h-[60px] w-auto"
+              className="h-11 md:h-[51px] w-auto"
             />
           </Link>
 
