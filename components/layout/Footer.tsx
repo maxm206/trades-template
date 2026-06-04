@@ -15,10 +15,10 @@ export function Footer() {
           <div className="col-span-2">
             <Link href="/" aria-label={`${siteConfig.businessName} home`} className="inline-block">
               <Image
-                src="/logo.png"
+                src="/logo-light.png"
                 alt={siteConfig.businessName}
-                width={586}
-                height={184}
+                width={1673}
+                height={571}
                 className="h-11 w-auto"
               />
             </Link>

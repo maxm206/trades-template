@@ -29,11 +29,11 @@ const platform: PlatformConfig = {
 }
 
 export const siteConfig = {
-  businessName: "Summit Heating & Air",
+  businessName: "TA Home Services",
   tagline: "San Diego's most trusted HVAC team.",
   phone: "(619) 555-0199",
   phoneClean: "6195550199",
-  email: "info@summithvac.com",
+  email: "info@tahomeservices.com",
   address: "San Diego, CA",
   license: "CSLB #9876543",
   founded: "2014",

@@ -1,6 +1,6 @@
 # Trades Advisory Template
 
-Reusable Next.js 14 template for HVAC, plumbing, and home services client websites. Currently configured as the **Summit Heating & Air** demo at [demo.tradesadvisory.com](https://demo.tradesadvisory.com).
+Reusable Next.js 14 template for HVAC, plumbing, and home services client websites. Currently configured as the **TA Home Services** demo at [demo.tradesadvisory.com](https://demo.tradesadvisory.com).
 
 ## Stack
 
@@ -123,7 +123,7 @@ platform: {
 }
 ```
 
-Leaving `zenbookerUrl` blank falls back to the Summit demo's fake calendar UI (used by `demo.tradesadvisory.com`).
+Leaving `zenbookerUrl` blank falls back to the TA Home Services demo's fake calendar UI (used by `demo.tradesadvisory.com`).
 
 ### No platform (contact form fallback)
 

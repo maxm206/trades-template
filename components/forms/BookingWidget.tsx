@@ -46,7 +46,7 @@ export function BookingWidget({ compact = false }: { compact?: boolean }) {
       )
     case "zenbooker":
       // If a real ZenBooker URL is configured, embed it. Otherwise fall back
-      // to the demo UI (used by the Summit Heating & Air showcase site).
+      // to the demo UI (used by the TA Home Services showcase site).
       if (siteConfig.platform.zenbookerUrl) {
         return (
           <PlatformIframe
@@ -151,7 +151,7 @@ function MissingPlatformConfig({
 }
 
 // -- ZenBooker demo UI -------------------------------------------------------
-// Original fake calendar + slot picker. Used by the Summit demo site so the
+// Original fake calendar + slot picker. Used by the TA Home Services demo site so the
 // concept can be experienced without a real ZenBooker account.
 
 function getCurrentMonthMatrix() {

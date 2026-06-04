@@ -72,7 +72,7 @@ export function GBPCard() {
               </div>
               <div className="flex items-center gap-2 text-slate-700">
                 <Globe className="h-4 w-4 text-slate-400" aria-hidden />
-                <span>summithvac.com</span>
+                <span>tahomeservices.com</span>
               </div>
             </div>
 

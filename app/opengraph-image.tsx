@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og"
 import { siteConfig } from "@/config/site"
+import { OG_LOGO } from "./ogLogoData"
 
 export const runtime = "edge"
 export const alt = `${siteConfig.businessName} — ${siteConfig.tagline}`
@@ -30,21 +31,12 @@ export default async function OpengraphImage() {
             borderRadius: 3,
           }}
         />
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={OG_LOGO} alt={siteConfig.businessName} width={520} height={178} />
           <div
             style={{
-              fontSize: 28,
-              color: siteConfig.colors.accent,
-              textTransform: "uppercase",
-              letterSpacing: "0.18em",
-              fontWeight: 700,
-            }}
-          >
-            {siteConfig.businessName}
-          </div>
-          <div
-            style={{
-              fontSize: 88,
+              fontSize: 80,
               fontWeight: 800,
               letterSpacing: "-0.025em",
               lineHeight: 1.0,
@@ -54,8 +46,8 @@ export default async function OpengraphImage() {
             {siteConfig.tagline}
           </div>
         </div>
-        <div style={{ fontSize: 24, color: "rgba(255,255,255,0.65)" }}>
-          {siteConfig.phone} · {siteConfig.serviceArea}
+        <div style={{ display: "flex", fontSize: 24, color: "rgba(255,255,255,0.65)" }}>
+          {`${siteConfig.phone} · ${siteConfig.serviceArea}`}
         </div>
       </div>
     ),
